@@ -5,7 +5,7 @@ Jin 等人提出了一种自动并行回火马尔可夫链蒙特卡洛（Automat
 基准实验配置也遵循 Jin 等人在其研究里的描述，包括：
 1. 模型与数据：包含 15 个轨道参数的双行星系统模型，基于其指定的模拟天体测量数据集进行估计。参数的模拟真值参考其论文 Table 1。
 2. Nii-C 运行参数：启动 8 条具有特定温度 β 值序列的并行回火链；设定总运行长度为 300 万次 MCMC 迭代，舍弃前 50 万次作为预烧期（burn-in）。一个不同之处在于，本研究在整个 300 万次迭代期间均激活了 Nii-C 的自动调整提议分布功能，而不是仅在前 100 万次迭代期间激活。
-在以下三个版本中，关于模型的设置在user_logll.R和user_prior.R，MCMC迭代参数的设置在input.ini文件中。
+在以下三个版本中，关于模型的设置在user_logll.R和user_prior.R，MCMC迭代参数的设置在input.ini文件中。同时请注意，任何C语言文件都是https://github.com/shengjin/nii-c.git中获取的，即Nii-C代码，由Jin等人所创作。
 
 ## 纯R语言版本
 纯R语言版本的APT-MCMC代码在 pure R language version 文件夹里，main.R是主文件。通过 Rstudio 运行 main.R 文件，就开始了对这个模型15个参数的估计。
